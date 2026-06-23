@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LootMart Manali | Shopping Store in Manali</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            lootBlue: "#0461b7",
+            lootOrange: "#fe760a"
+          },
+          boxShadow: {
+            soft: "0 12px 35px rgba(4, 97, 183, 0.13)",
+            card: "0 8px 24px rgba(0, 0, 0, 0.08)"
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .category-card, .product-card { transition: all 0.25s ease; }
+    .category-card:hover, .product-card:hover { transform: translateY(-5px); }
+    .product-card:hover img, .category-card:hover img { transform: scale(1.06); }
+  </style>
+</head>
+
+<body class="bg-white text-slate-900">
+
+  <!-- Top Bar -->
+  <div class="bg-lootBlue text-white text-sm">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex flex-col md:flex-row justify-between gap-2">
+      <p>Manali Store | Home Furnishing, Kids, Gifting & Tourist Essentials</p>
+      <p>Call / WhatsApp: +91 XXXXX XXXXX</p>
+    </div>
+  </div>
+
+  <!-- Header -->
+<header class="sticky top-0 z-50 bg-white border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center gap-4">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center shrink-0">
+      <img 
+        src="assets/images/logo.jpeg" 
+        alt="LootMart Manali Logo"
+        class="h-14 w-auto object-contain"
+      >
+    </a>
+
+    <!-- Search Bar -->
+    <div class="hidden md:flex flex-1 max-w-xl">
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Search for bags, toys, hoodies, bottles, watches..."
+        class="w-full px-5 py-3 border-2 border-lootBlue rounded-l-xl outline-none"
+      />
+      <button class="px-7 py-3 bg-lootOrange text-white rounded-r-xl font-bold">
+        Search
+      </button>
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden lg:flex items-center gap-6 font-semibold whitespace-nowrap">
+
+      <!-- Categories Dropdown -->
+      <div class="relative group">
+        <button class="hover:text-lootOrange flex items-center gap-1">
+          Categories
+          <span class="text-xs">▼</span>
+        </button>
+
+        <div class="absolute left-0 top-full pt-4 hidden group-hover:block">
+          <div class="w-72 bg-white rounded-2xl shadow-soft border border-slate-200 p-3">
+
+            <a href="bags.html" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Bags
+            </a>
+
+            <a href="boots.html" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Boots
+            </a>
+
+            <a href="bottles.html" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Bottle, Tumblers, Mugs
+            </a>
+
+            <a href="#" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Diaries
+            </a>
+
+            <a href="#" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Glasses
+            </a>
+
+            <a href="#" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Mats, Rugs, Towels
+            </a>
+
+            <a href="#" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Tool Kits
+            </a>
+
+            <a href="toys.html" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Toys
+            </a>
+
+            <a href="#" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Warm Hoodies
+            </a>
+
+            <a href="#" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Watches
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <a href="about.html" class="hover:text-lootOrange">About Us</a>
+      <a href="index.html#top-selling" class="hover:text-lootOrange">Top Selling</a>
+      <a href="contact.html" class="hover:text-lootOrange">Contact</a>
+
+    </nav>
+
+    <!-- Login + Cart -->
+    <div class="hidden lg:flex items-center gap-3 ml-auto">
+<a 
+  id="loginLink"
+  href="#"
+  class="border-2 border-lootBlue text-lootBlue px-5 py-3 rounded-xl font-bold hover:bg-lootBlue hover:text-white transition"
+>
+  Login
+</a>
+
+      <a 
+        href="#"
+        class="relative bg-lootOrange text-white px-5 py-3 rounded-xl font-bold hover:opacity-90 transition"
+      >
+        Cart
+        <span id="cartCount" class="absolute -top-2 -right-2 bg-lootBlue text-white text-xs w-6 h-6 rounded-full flex items-center justify-center">
+          0
+        </span>
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="menuBtn" class="lg:hidden ml-auto text-lootBlue text-3xl font-bold">☰</button>
+
+  </div>
+
+  <!-- Mobile Search -->
+  <div class="md:hidden px-4 pb-4 flex">
+    <input
+      id="mobileSearchInput"
+      type="text"
+      placeholder="Search products..."
+      class="w-full px-4 py-3 border-2 border-lootBlue rounded-l-xl outline-none"
+    />
+    <button class="px-5 py-3 bg-lootOrange text-white rounded-r-xl font-bold">Go</button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden lg:hidden px-4 pb-4">
+    <div class="grid gap-2 font-semibold">
+
+      <details class="bg-slate-50 rounded-xl p-3">
+        <summary class="cursor-pointer text-lootBlue font-extrabold">
+          Categories
+        </summary>
+
+        <div class="grid gap-2 mt-3 pl-2">
+          <a href="bags.html" class="hover:text-lootOrange">Bags</a>
+          <a href="boots.html" class="hover:text-lootOrange">Boots</a>
+          <a href="bottles.html" class="hover:text-lootOrange">Bottle, Tumblers, Mugs</a>
+          <a href="#" class="hover:text-lootOrange">Diaries</a>
+          <a href="#" class="hover:text-lootOrange">Glasses</a>
+          <a href="#" class="hover:text-lootOrange">Mats, Rugs, Towels</a>
+          <a href="#" class="hover:text-lootOrange">Tool Kits</a>
+          <a href="toys.html" class="hover:text-lootOrange">Toys</a>
+          <a href="#" class="hover:text-lootOrange">Warm Hoodies</a>
+          <a href="#" class="hover:text-lootOrange">Watches</a>
+        </div>
+      </details>
+
+      <a href="about.html" class="bg-slate-50 rounded-xl p-3">About Us</a>
+      <a href="index.html#top-selling" class="bg-slate-50 rounded-xl p-3">Top Selling</a>
+      <a href="contact.html" class="bg-slate-50 rounded-xl p-3">Contact</a>
+      <a id="mobileLoginLink" href="#" class="bg-slate-50 rounded-xl p-3">
+  Login
+</a>
+      <a href="#" class="bg-lootOrange text-white rounded-xl p-3">Cart</a>
+
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="relative overflow-hidden bg-lootBlue">
+  <div class="absolute inset-0">
+    <img 
+      src="assets/images/hero/hero1 (1).png" 
+      alt="Manali mountain background"
+      class="w-full h-full object-cover"
+    >
+    <!-- <div class="absolute inset-0 bg-gradient-to-r from-lootBlue via-lootBlue/85 to-white/20"></div> -->
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 py-12 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
+    <div>
+      <div class="inline-flex items-center gap-2 bg-white border border-blue-100 shadow-soft px-4 py-2 rounded-full mb-5">
+        <span class="w-3 h-3 bg-lootOrange rounded-full"></span>
+        <span class="text-lootBlue font-bold">LootMart Manali</span>
+      </div>
+
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-white">
+        One Store For Home, Kids, Gifting & Travel Essentials
+      </h1>
+
+      <p class="mt-5 text-lg text-blue-50 max-w-xl">
+        Shop carpets, curtains, blankets, toys, ride-on cars, wallets, sunglasses, bags, boots, bottles, hoodies and more at LootMart Manali.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#categories" class="bg-lootOrange text-white px-8 py-4 rounded-xl font-extrabold shadow-soft hover:opacity-90">
+          Explore Categories
+        </a>
+        <a href="#top-selling" class="border-2 border-white text-white px-8 py-4 rounded-xl font-extrabold hover:bg-white hover:text-lootBlue">
+          View Top Selling
+        </a>
+      </div>
+
+      <div class="mt-8 grid grid-cols-3 gap-4 max-w-lg">
+        <div class="bg-white rounded-2xl p-4 shadow-soft border border-blue-100">
+          <h3 class="text-2xl font-extrabold text-lootBlue">10+</h3>
+          <p class="text-sm text-slate-500">Categories</p>
+        </div>
+        <div class="bg-white rounded-2xl p-4 shadow-soft border border-blue-100">
+          <h3 class="text-2xl font-extrabold text-lootBlue">100+</h3>
+          <p class="text-sm text-slate-500">Products</p>
+        </div>
+        <div class="bg-white rounded-2xl p-4 shadow-soft border border-blue-100">
+          <h3 class="text-2xl font-extrabold text-lootBlue">Local</h3>
+          <p class="text-sm text-slate-500">Manali Store</p>
+        </div>
+      </div>
+    </div>
+
+<div class="relative">
+
+  <div class="grid grid-cols-2 gap-5">
+
+ <!-- Card 1 -->
+<div class="hero-carousel relative overflow-hidden rounded-3xl shadow-card aspect-square"
+data-images="
+assets/images/hero/hero 80.png,
+assets/images/hero/hero new arrival.png,
+assets/images/hero/hero kids.png
+">
+<img class="carousel-img w-full h-full object-cover transition duration-700" src="" alt="Hero product">
+</div>
+
+<!-- Card 2 -->
+<div class="hero-carousel relative overflow-hidden rounded-3xl shadow-card aspect-square"
+data-images="
+assets/images/hero/hero best seller.png,
+assets/images/hero/hero fashion.png,
+assets/images/hero/hero travel.png
+">
+<img class="carousel-img w-full h-full object-cover transition duration-700" src="" alt="Hero product">
+</div>
+
+<!-- Card 3 -->
+<div class="hero-carousel relative overflow-hidden rounded-3xl shadow-card aspect-square"
+data-images="
+assets/images/hero/hero trending.png,
+assets/images/hero/hero home.png,
+assets/images/hero/hero office.png
+">
+<img class="carousel-img w-full h-full object-cover transition duration-700" src="" alt="Hero product">
+</div>
+
+<!-- Card 4 -->
+<div class="hero-carousel relative overflow-hidden rounded-3xl shadow-card aspect-square"
+data-images="
+assets/images/hero/hero winter.png,
+assets/images/hero/hero gift.png,
+assets/images/hero/hero kilo.png
+">
+<img class="carousel-img w-full h-full object-cover transition duration-700" src="" alt="Hero product">
+</div>
+  </div>
+
+</div>
+  </div>
+</section>
+
+  <!-- Category Strip -->
+  <section class="border-y border-slate-200 bg-white">
+    <div id="categoryStrip" class="max-w-7xl mx-auto px-4 py-4 flex gap-3 overflow-x-auto hide-scrollbar"></div>
+  </section>
+
+<!-- Categories -->
+<section id="categories" class="max-w-7xl mx-auto px-4 py-20">
+
+  <div class="mb-12">
+    <p class="text-lootOrange font-extrabold uppercase tracking-widest text-sm">
+      SHOP BY CATEGORY
+    </p>
+
+    <h2 class="text-4xl md:text-5xl font-extrabold text-lootBlue mt-2">
+      Explore Product Categories
+    </h2>
+
+    <p class="text-slate-500 mt-4 max-w-2xl text-lg">
+      Discover home furnishing, gifting, travel essentials and kids products at LootMart Manali.
+    </p>
+  </div>
+
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-7">
+
+    <!-- Bags -->
+    <div class="group relative rounded-3xl overflow-hidden h-[340px] cursor-pointer shadow-soft">
+      <img src="assets/images/hero/bag.png"
+        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+      <div class="absolute bottom-0 p-6">
+        <p class="text-white/70 text-sm font-semibold">Travel Collection</p>
+        <h3 class="text-white text-3xl font-extrabold mt-1">Bags</h3>
+        <p class="text-white/80 text-sm mt-3">Travel bags, laptop bags and duffle bags.</p>
+      </div>
+    </div>
+
+    <!-- Boots -->
+    <div class="group relative rounded-3xl overflow-hidden h-[340px] cursor-pointer shadow-soft">
+      <img src="assets/images/hero/shoes.png"
+        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+      <div class="absolute bottom-0 p-6">
+        <p class="text-white/70 text-sm font-semibold">Winter Essentials</p>
+        <h3 class="text-white text-3xl font-extrabold mt-1">Boots</h3>
+        <p class="text-white/80 text-sm mt-3">Comfortable boots for winter and travel.</p>
+      </div>
+    </div>
+
+    <!-- Bottles -->
+    <div class="group relative rounded-3xl overflow-hidden h-[340px] cursor-pointer shadow-soft">
+      <img src="assets/images/hero/bottle.png"
+        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+      <div class="absolute bottom-0 p-6">
+        <p class="text-white/70 text-sm font-semibold">Daily Essentials</p>
+        <h3 class="text-white text-2xl font-extrabold mt-1">Bottle, Tumblers, Mugs</h3>
+        <p class="text-white/80 text-sm mt-3">Premium bottles and mugs for travel and gifting.</p>
+      </div>
+    </div>
+
+    <!-- Diaries -->
+    <div class="group relative rounded-3xl overflow-hidden h-[340px] cursor-pointer shadow-soft">
+      <img src="assets/images/hero/diary.png"
+        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+      <div class="absolute bottom-0 p-6">
+        <p class="text-white/70 text-sm font-semibold">Office & Gifting</p>
+        <h3 class="text-white text-3xl font-extrabold mt-1">Diaries</h3>
+        <p class="text-white/80 text-sm mt-3">Premium diaries and notebooks.</p>
+      </div>
+    </div>
+
+    <!-- Glasses -->
+    <div class="group relative rounded-3xl overflow-hidden h-[340px] cursor-pointer shadow-soft">
+      <img src="assets/images/hero/glasses.png"
+        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+      <div class="absolute bottom-0 p-6">
+        <p class="text-white/70 text-sm font-semibold">Fashion Collection</p>
+        <h3 class="text-white text-3xl font-extrabold mt-1">Glasses</h3>
+        <p class="text-white/80 text-sm mt-3">Stylish sunglasses and eyewear.</p>
+      </div>
+    </div>
+
+    <!-- Mats -->
+    <div class="group relative rounded-3xl overflow-hidden h-[340px] cursor-pointer shadow-soft">
+      <img src="assets/images/hero/mats.png"
+        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+      <div class="absolute bottom-0 p-6">
+        <p class="text-white/70 text-sm font-semibold">Home Furnishing</p>
+        <h3 class="text-white text-2xl font-extrabold mt-1">Mats, Rugs, Towels</h3>
+        <p class="text-white/80 text-sm mt-3">Home furnishing and comfort essentials.</p>
+      </div>
+    </div>
+
+    <!-- Tool Kits -->
+    <div class="group relative rounded-3xl overflow-hidden h-[340px] cursor-pointer shadow-soft">
+      <img src="assets/images/hero/tool-kits.png"
+        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+      <div class="absolute bottom-0 p-6">
+        <p class="text-white/70 text-sm font-semibold">Repair Essentials</p>
+        <h3 class="text-white text-3xl font-extrabold mt-1">Tool Kits</h3>
+        <p class="text-white/80 text-sm mt-3">Useful tool kits for home and travel.</p>
+      </div>
+    </div>
+
+<!-- Toys -->
+<a href="toys.html" class="group relative rounded-3xl overflow-hidden h-[340px] cursor-pointer shadow-soft block">
+  
+  <img src="assets/images/hero/toys.png"
+    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+  <div class="absolute bottom-0 p-6">
+    <p class="text-white/70 text-sm font-semibold">Kids Collection</p>
+
+    <h3 class="text-white text-3xl font-extrabold mt-1">
+      Toys
+    </h3>
+
+    <p class="text-white/80 text-sm mt-3">
+      Premium toys and battery super cars.
+    </p>
+  </div>
+
+</a>
+
+    <!-- Hoodies -->
+    <div class="group relative rounded-3xl overflow-hidden h-[340px] cursor-pointer shadow-soft">
+      <img src="assets/images/hero/hoodies.png"
+        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+      <div class="absolute bottom-0 p-6">
+        <p class="text-white/70 text-sm font-semibold">Winter Wear</p>
+        <h3 class="text-white text-3xl font-extrabold mt-1">Warm Hoodies</h3>
+        <p class="text-white/80 text-sm mt-3">Warm and stylish hoodies for Manali weather.</p>
+      </div>
+    </div>
+
+    <!-- Watches -->
+    <div class="group relative rounded-3xl overflow-hidden h-[340px] cursor-pointer shadow-soft">
+      <img src="assets/images/hero/watches.png"
+        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+      <div class="absolute bottom-0 p-6">
+        <p class="text-white/70 text-sm font-semibold">Premium Gifting</p>
+        <h3 class="text-white text-3xl font-extrabold mt-1">Watches</h3>
+        <p class="text-white/80 text-sm mt-3">Premium watches for gifting and daily wear.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Top Selling -->
+<section id="top-selling" class="bg-gradient-to-b from-blue-50 to-white py-20">
+
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- Heading -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+
+      <div>
+        <p class="text-lootOrange font-extrabold uppercase tracking-[0.25em] text-sm">
+          TOP PICKS
+        </p>
+
+        <h2 class="text-4xl md:text-5xl font-extrabold text-lootBlue mt-3 leading-tight">
+          Top Selling Products
+        </h2>
+
+        <p class="text-slate-500 text-lg mt-4 max-w-2xl">
+          LootMart Manali ke sabse zyada bikne wale premium home, kids aur daily-use products.
+        </p>
+      </div>
+
+      <!-- <button class="border-2 border-lootBlue text-lootBlue hover:bg-lootBlue hover:text-white transition px-7 py-3 rounded-2xl font-bold">
+        View All Products
+      </button> -->
+
+    </div>
+
+    <!-- Products Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-7">
+
+      <!-- Product 1 -->
+      <div class="group bg-white rounded-3xl overflow-hidden shadow-soft border border-blue-100 hover:border-lootOrange transition">
+        <div class="relative overflow-hidden h-72 bg-slate-100">
+          <img src="assets/images/hero/toys.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute top-4 left-4 bg-lootOrange text-white px-4 py-2 rounded-full text-xs font-extrabold uppercase tracking-wide">
+            Best Seller
+          </div>
+        </div>
+
+        <div class="p-6">
+          <p class="text-lootOrange text-sm font-bold uppercase tracking-wide">
+            Kids Collection
+          </p>
+
+          <h3 class="text-2xl font-extrabold text-lootBlue mt-2">
+            Electric Toys
+          </h3>
+
+          <p class="text-slate-500 mt-3 text-sm leading-relaxed">
+            Battery-operated toys, ride-on cars aur exciting kids products.
+          </p>
+
+          <div class="flex justify-between items-center mt-6">
+            <div>
+              <p class="text-sm text-slate-400">Starting From</p>
+              <h4 class="text-2xl font-extrabold text-lootOrange">₹799</h4>
+            </div>
+
+            <button class="bg-lootBlue text-white px-5 py-3 rounded-xl font-bold hover:bg-lootOrange transition">
+              View
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="group bg-white rounded-3xl overflow-hidden shadow-soft border border-blue-100 hover:border-lootOrange transition">
+        <div class="relative overflow-hidden h-72 bg-slate-100">
+          <img src="assets/images/hero/curtains.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute top-4 left-4 bg-lootOrange text-white px-4 py-2 rounded-full text-xs font-extrabold uppercase tracking-wide">
+            Trending
+          </div>
+        </div>
+
+        <div class="p-6">
+          <p class="text-lootOrange text-sm font-bold uppercase tracking-wide">
+            Home Decor
+          </p>
+
+          <h3 class="text-2xl font-extrabold text-lootBlue mt-2">
+            Curtains
+          </h3>
+
+          <p class="text-slate-500 mt-3 text-sm leading-relaxed">
+            Stylish curtains jo room ko premium aur beautiful look dete hain.
+          </p>
+
+          <div class="flex justify-between items-center mt-6">
+            <div>
+              <p class="text-sm text-slate-400">Best Price</p>
+              <h4 class="text-2xl font-extrabold text-lootOrange">Available</h4>
+            </div>
+
+            <button class="bg-lootBlue text-white px-5 py-3 rounded-xl font-bold hover:bg-lootOrange transition">
+              View
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="group bg-white rounded-3xl overflow-hidden shadow-soft border border-blue-100 hover:border-lootOrange transition">
+        <div class="relative overflow-hidden h-72 bg-slate-100">
+          <img src="assets/images/hero/floor-mat.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute top-4 left-4 bg-lootOrange text-white px-4 py-2 rounded-full text-xs font-extrabold uppercase tracking-wide">
+            Hot Product
+          </div>
+        </div>
+
+        <div class="p-6">
+          <p class="text-lootOrange text-sm font-bold uppercase tracking-wide">
+            Home Essentials
+          </p>
+
+          <h3 class="text-2xl font-extrabold text-lootBlue mt-2">
+            Floor Mat
+          </h3>
+
+          <p class="text-slate-500 mt-3 text-sm leading-relaxed">
+            Soft, durable aur easy-to-clean floor mats for home and daily use.
+          </p>
+
+          <div class="flex justify-between items-center mt-6">
+            <div>
+              <p class="text-sm text-slate-400">Starting From</p>
+              <h4 class="text-2xl font-extrabold text-lootOrange">₹199</h4>
+            </div>
+
+            <button class="bg-lootBlue text-white px-5 py-3 rounded-xl font-bold hover:bg-lootOrange transition">
+              View
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="group bg-white rounded-3xl overflow-hidden shadow-soft border border-blue-100 hover:border-lootOrange transition">
+        <div class="relative overflow-hidden h-72 bg-slate-100">
+          <img src="assets/images/hero/towel.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+          <div class="absolute top-4 left-4 bg-lootOrange text-white px-4 py-2 rounded-full text-xs font-extrabold uppercase tracking-wide">
+            Popular
+          </div>
+        </div>
+
+        <div class="p-6">
+          <p class="text-lootOrange text-sm font-bold uppercase tracking-wide">
+            Daily Essentials
+          </p>
+
+          <h3 class="text-2xl font-extrabold text-lootBlue mt-2">
+            Towel
+          </h3>
+
+          <p class="text-slate-500 mt-3 text-sm leading-relaxed">
+            Soft cotton towels with premium quality for everyday comfort.
+          </p>
+
+          <div class="flex justify-between items-center mt-6">
+            <div>
+              <p class="text-sm text-slate-400">Starting From</p>
+              <h4 class="text-2xl font-extrabold text-lootOrange">₹149</h4>
+            </div>
+
+            <button class="bg-lootBlue text-white px-5 py-3 rounded-xl font-bold hover:bg-lootOrange transition">
+              View
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- Store Sections -->
+<section class="max-w-7xl mx-auto px-4 py-20">
+
+  <div class="mb-12">
+    <p class="text-lootOrange font-extrabold uppercase tracking-[0.25em] text-sm">
+      STORE SECTIONS
+    </p>
+
+    <h2 class="text-4xl md:text-5xl font-extrabold text-lootBlue mt-3">
+      Everything Organized For Easy Shopping
+    </h2>
+
+    <p class="text-slate-500 text-lg mt-4 max-w-2xl">
+      Browse LootMart Manali by clear product sections made for home needs, kids, gifting and travel shopping.
+    </p>
+  </div>
+
+  <div class="grid lg:grid-cols-2 gap-7">
+
+    <!-- Home Furnishings -->
+    <div class="group relative min-h-[380px] rounded-3xl overflow-hidden shadow-soft cursor-pointer">
+      <img 
+        src="assets/images/hero/home store furnishing.png"
+        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500"
+        alt="Home Furnishings"
+      >
+
+      <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/35 to-transparent"></div>
+
+      <div class="relative z-10 p-8 md:p-10 max-w-md h-full flex flex-col justify-end min-h-[380px]">
+        <p class="text-lootOrange font-extrabold uppercase tracking-wide">
+          Home Furnishings
+        </p>
+
+        <h3 class="text-white text-3xl md:text-4xl font-extrabold mt-2">
+          Comfort For Every Home
+        </h3>
+
+        <p class="text-white/80 mt-4 leading-relaxed">
+          Carpets, curtains, blankets, bedsheets, towels and cushions for daily comfort and home styling.
+        </p>
+
+        <button class="mt-6 bg-lootOrange text-white px-6 py-3 rounded-xl font-extrabold w-fit">
+          Explore Section
+        </button>
+      </div>
+    </div>
+
+    <!-- Kids -->
+    <div class="group relative min-h-[380px] rounded-3xl overflow-hidden shadow-soft cursor-pointer">
+      <img 
+        src="assets/images/hero/home store kids.png"
+        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500"
+        alt="Kids Products"
+      >
+
+      <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/35 to-transparent"></div>
+
+      <div class="relative z-10 p-8 md:p-10 max-w-md h-full flex flex-col justify-end min-h-[380px]">
+        <p class="text-lootOrange font-extrabold uppercase tracking-wide">
+          Kids
+        </p>
+
+        <h3 class="text-white text-3xl md:text-4xl font-extrabold mt-2">
+          Toys & Super Cars
+        </h3>
+
+        <p class="text-white/80 mt-4 leading-relaxed">
+          Toys, premium toys and battery-operated ride-on super cars for children.
+        </p>
+
+        <button class="mt-6 bg-lootOrange text-white px-6 py-3 rounded-xl font-extrabold w-fit">
+          Explore Section
+        </button>
+      </div>
+    </div>
+
+    <!-- Gifting -->
+    <div class="group relative min-h-[380px] rounded-3xl overflow-hidden shadow-soft cursor-pointer">
+      <img 
+        src="assets/images/hero/home store gift.png"
+        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500"
+        alt="Gifting Products"
+      >
+
+      <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/35 to-transparent"></div>
+
+      <div class="relative z-10 p-8 md:p-10 max-w-md h-full flex flex-col justify-end min-h-[380px]">
+        <p class="text-lootOrange font-extrabold uppercase tracking-wide">
+          Gifting
+        </p>
+
+        <h3 class="text-white text-3xl md:text-4xl font-extrabold mt-2">
+          Premium Gift Picks
+        </h3>
+
+        <p class="text-white/80 mt-4 leading-relaxed">
+          Wallets, belts, diaries, watches, tumblers and sunglasses for personal and festive gifting.
+        </p>
+
+        <button class="mt-6 bg-lootOrange text-white px-6 py-3 rounded-xl font-extrabold w-fit">
+          Explore Section
+        </button>
+      </div>
+    </div>
+
+    <!-- Tourist Essentials -->
+    <div id="tourist" class="group relative min-h-[380px] rounded-3xl overflow-hidden shadow-soft cursor-pointer">
+      <img 
+        src="assets/images/hero/home store tourist.png"
+        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500"
+        alt="Tourist Essentials"
+      >
+
+      <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/35 to-transparent"></div>
+
+      <div class="relative z-10 p-8 md:p-10 max-w-md h-full flex flex-col justify-end min-h-[380px]">
+        <p class="text-lootOrange font-extrabold uppercase tracking-wide">
+          Tourist Essentials
+        </p>
+
+        <h3 class="text-white text-3xl md:text-4xl font-extrabold mt-2">
+          Ready For Manali Travel
+        </h3>
+
+        <p class="text-white/80 mt-4 leading-relaxed">
+          Travel bags, laptop bags, duffle bags, boots, camping tables, camping chairs and sunglasses.
+        </p>
+
+        <button class="mt-6 bg-lootOrange text-white px-6 py-3 rounded-xl font-extrabold w-fit">
+          Explore Section
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Deals Banner -->
+<section class="max-w-7xl mx-auto px-4 pb-20">
+
+  <div class="space-y-8">
+
+    <!-- Card 1 -->
+    <div class="group relative overflow-hidden rounded-[40px] min-h-[420px] shadow-soft">
+
+      <!-- Background Image -->
+      <img 
+        src="assets/images/hero/home couple.png"
+        alt="Tourist Essentials"
+        class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700"
+      >
+
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-transparent"></div>
+
+      <!-- Content -->
+      <div class="relative z-10 h-full flex items-center">
+
+        <div class="max-w-2xl p-10 md:p-16">
+
+          <p class="text-lootOrange font-extrabold uppercase tracking-[0.25em] text-sm">
+            SPECIAL COLLECTION
+          </p>
+
+          <h2 class="text-white text-4xl md:text-6xl font-extrabold leading-tight mt-4">
+            Best Picks For Manali Visitors
+          </h2>
+
+          <p class="text-white/80 text-lg leading-relaxed mt-6 max-w-xl">
+            Travel bags, hoodies, boots, bottles and sunglasses specially selected for your Manali trip.
+          </p>
+
+          <div class="flex flex-wrap gap-4 mt-8">
+
+            <button 
+              onclick="showComingSoon('Tourist Essentials', 'tourist-essentials.html')"
+              class="bg-lootOrange text-white px-8 py-4 rounded-2xl font-extrabold hover:scale-105 transition"
+            >
+              Explore Collection
+            </button>
+
+            <button 
+              class="border-2 border-white text-white px-8 py-4 rounded-2xl font-extrabold hover:bg-white hover:text-black transition"
+            >
+              View Products
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Card 2 -->
+    <div class="group relative overflow-hidden rounded-[40px] min-h-[420px] shadow-soft">
+
+      <!-- Background -->
+      <img 
+        src="assets/images/hero/home kids collection.png"
+        alt="Kids Collection"
+        class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700"
+      >
+
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-transparent"></div>
+
+      <!-- Content -->
+      <div class="relative z-10 h-full flex items-center">
+
+        <div class="max-w-2xl p-10 md:p-16">
+
+          <p class="text-lootOrange font-extrabold uppercase tracking-[0.25em] text-sm">
+            KIDS COLLECTION
+          </p>
+
+          <h2 class="text-white text-4xl md:text-6xl font-extrabold leading-tight mt-4">
+            Toys & Battery Super Cars
+          </h2>
+
+          <p class="text-white/80 text-lg leading-relaxed mt-6 max-w-xl">
+            Discover premium toys, battery-operated ride-on cars and exciting kids products at LootMart Manali.
+          </p>
+
+          <div class="flex flex-wrap gap-4 mt-8">
+
+            <button 
+              onclick="showComingSoon('Toys', 'toys.html')"
+              class="bg-lootOrange text-white px-8 py-4 rounded-2xl font-extrabold hover:scale-105 transition"
+            >
+              Explore Toys
+            </button>
+
+            <button 
+              class="border-2 border-white text-white px-8 py-4 rounded-2xl font-extrabold hover:bg-white hover:text-black transition"
+            >
+              View Collection
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Why LootMart -->
+<section class="relative py-24 overflow-hidden bg-white">
+
+  <!-- Background Blur -->
+  <div class="absolute top-0 left-0 w-96 h-96 bg-lootBlue/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 right-0 w-96 h-96 bg-lootOrange/10 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4">
+
+    <!-- Heading -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+
+      <p class="text-lootOrange font-extrabold uppercase tracking-[0.3em] text-sm">
+        WHY LOOTMART
+      </p>
+
+      <h2 class="text-5xl md:text-6xl font-extrabold text-lootBlue mt-4 leading-tight">
+        Built For Modern <br> Shopping In Manali
+      </h2>
+
+      <p class="text-slate-500 text-lg mt-6 leading-relaxed">
+        A premium local shopping experience for tourists, families and everyday customers.
+      </p>
+
+    </div>
+
+    <!-- Dynamic Layout -->
+    <div class="grid lg:grid-cols-12 gap-7">
+
+      <!-- Big Feature -->
+      <div class="lg:col-span-5 relative overflow-hidden rounded-[40px] min-h-[520px] shadow-soft group">
+
+        <img 
+          src="assets/images/hero/home why.png"
+          class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent"></div>
+
+        <div class="relative z-10 h-full flex flex-col justify-end p-10">
+
+          <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-7">
+
+            <p class="text-lootOrange font-extrabold uppercase tracking-wide text-sm">
+              LootMart Experience
+            </p>
+
+            <h3 class="text-white text-4xl font-extrabold mt-4 leading-tight">
+              Everything <br> In One Place
+            </h3>
+
+            <p class="text-white/80 mt-5 text-lg leading-relaxed">
+              Home essentials, gifting products, toys, bags and travel accessories together.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Right Grid -->
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-7">
+
+        <!-- Card -->
+        <div class="group bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-[32px] p-8 shadow-soft hover:-translate-y-2 transition duration-300">
+
+          <div class="flex items-center justify-between">
+
+            <div class="h-14 w-14 rounded-2xl bg-lootBlue flex items-center justify-center">
+              <span class="text-white font-extrabold text-xl">01</span>
+            </div>
+
+            <div class="h-[2px] flex-1 bg-blue-100 mx-4"></div>
+
+            <span class="text-lootOrange font-extrabold uppercase text-sm">
+              Local Store
+            </span>
+
+          </div>
+
+          <h3 class="text-3xl font-extrabold text-lootBlue mt-8">
+            Located In Manali
+          </h3>
+
+          <p class="text-slate-500 mt-4 leading-relaxed">
+            Easy shopping access for locals, tourists and nearby customers.
+          </p>
+
+        </div>
+
+        <!-- Card -->
+        <div class="group bg-gradient-to-br from-orange-50 to-white border border-orange-100 rounded-[32px] p-8 shadow-soft hover:-translate-y-2 transition duration-300">
+
+          <div class="flex items-center justify-between">
+
+            <div class="h-14 w-14 rounded-2xl bg-lootOrange flex items-center justify-center">
+              <span class="text-white font-extrabold text-xl">02</span>
+            </div>
+
+            <div class="h-[2px] flex-1 bg-orange-100 mx-4"></div>
+
+            <span class="text-lootBlue font-extrabold uppercase text-sm">
+              Product Range
+            </span>
+
+          </div>
+
+          <h3 class="text-3xl font-extrabold text-lootBlue mt-8">
+            Huge Variety
+          </h3>
+
+          <p class="text-slate-500 mt-4 leading-relaxed">
+            Home furnishing, gifting, toys, winter wear and travel essentials.
+          </p>
+
+        </div>
+
+        <!-- Card -->
+        <div class="group bg-gradient-to-br from-orange-50 to-white border border-orange-100 rounded-[32px] p-8 shadow-soft hover:-translate-y-2 transition duration-300">
+
+          <div class="flex items-center justify-between">
+
+            <div class="h-14 w-14 rounded-2xl bg-lootOrange flex items-center justify-center">
+              <span class="text-white font-extrabold text-xl">03</span>
+            </div>
+
+            <div class="h-[2px] flex-1 bg-orange-100 mx-4"></div>
+
+            <span class="text-lootBlue font-extrabold uppercase text-sm">
+              Top Sellers
+            </span>
+
+          </div>
+
+          <h3 class="text-3xl font-extrabold text-lootBlue mt-8">
+            Trending Products
+          </h3>
+
+          <p class="text-slate-500 mt-4 leading-relaxed">
+            Toy cars, handloom products, bottles and sunglasses.
+          </p>
+
+        </div>
+
+        <!-- Card -->
+        <div class="group bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-[32px] p-8 shadow-soft hover:-translate-y-2 transition duration-300">
+
+          <div class="flex items-center justify-between">
+
+            <div class="h-14 w-14 rounded-2xl bg-lootBlue flex items-center justify-center">
+              <span class="text-white font-extrabold text-xl">04</span>
+            </div>
+
+            <div class="h-[2px] flex-1 bg-blue-100 mx-4"></div>
+
+            <span class="text-lootOrange font-extrabold uppercase text-sm">
+              Support
+            </span>
+
+          </div>
+
+          <h3 class="text-3xl font-extrabold text-lootBlue mt-8">
+            Quick Inquiry
+          </h3>
+
+          <p class="text-slate-500 mt-4 leading-relaxed">
+            Contact instantly through WhatsApp or phone support.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- Store Location Map -->
+<section id="store-location" class="relative py-24 bg-gradient-to-b from-white to-blue-50 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <p class="text-lootOrange font-extrabold uppercase tracking-[0.3em] text-sm">
+        VISIT LOOTMART
+      </p>
+      <h2 class="text-4xl md:text-6xl font-extrabold text-lootBlue mt-4">
+        Find Us Near Manali
+      </h2>
+      <p class="text-slate-500 text-lg mt-5">
+        Located near Patlikhul Market & Police Station, easy access for tourists and locals.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+
+      <!-- Map -->
+      <div class="rounded-[36px] overflow-hidden shadow-soft border border-blue-100 bg-white">
+        <iframe
+          src="https://www.google.com/maps?q=32.1222569,77.1466612&z=17&hl=en&output=embed"
+          class="w-full h-[460px]"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+        <div class="p-6">
+          <a 
+            href="https://www.google.com/maps?q=32.1222569,77.1466612&z=17&hl=en"
+            target="_blank"
+            class="inline-flex bg-lootOrange text-white px-7 py-4 rounded-2xl font-extrabold hover:scale-105 transition">
+            Open Location In Google Maps
+          </a>
+        </div>
+      </div>
+
+      <!-- Nearby Locations -->
+      <div class="bg-white rounded-[36px] shadow-soft border border-blue-100 p-8 md:p-10">
+
+        <h3 class="text-3xl md:text-4xl font-extrabold text-lootBlue">
+          Nearby Places
+        </h3>
+
+        <div class="mt-8 grid gap-4">
+
+          <div class="flex justify-between gap-4 border-b pb-4">
+            <span class="font-bold text-slate-700">Kullu</span>
+            <span class="text-lootOrange font-extrabold">25 km</span>
+          </div>
+
+          <div class="flex justify-between gap-4 border-b pb-4">
+            <span class="font-bold text-slate-700">Manali</span>
+            <span class="text-lootOrange font-extrabold">16 km</span>
+          </div>
+
+          <div class="flex justify-between gap-4 border-b pb-4">
+            <span class="font-bold text-slate-700">Sissu</span>
+            <span class="text-lootOrange font-extrabold">56 km</span>
+          </div>
+
+          <div class="flex justify-between gap-4 border-b pb-4">
+            <span class="font-bold text-slate-700">Patlikhul Market / Police Station</span>
+            <span class="text-lootOrange font-extrabold">Nearby</span>
+          </div>
+
+         <div class="flex justify-between gap-4 border-b pb-4">
+  <span class="font-bold text-slate-700">Beas Kund Trek</span>
+  <span class="text-lootOrange font-extrabold">Approx. 30 km</span>
+</div>
+
+<div class="flex justify-between gap-4 border-b pb-4">
+  <span class="font-bold text-slate-700">Solang Valley (Sunrise / Sunset Point)</span>
+  <span class="text-lootOrange font-extrabold">Approx. 29 km</span>
+</div>
+
+<div class="flex justify-between gap-4 border-b pb-4">
+  <span class="font-bold text-slate-700">Hamta Pass</span>
+  <span class="text-lootOrange font-extrabold">Approx. 27 km</span>
+</div>
+
+<div class="flex justify-between gap-4 border-b pb-4">
+  <span class="font-bold text-slate-700">Jana Waterfall</span>
+  <span class="text-lootOrange font-extrabold">Approx. 20 km</span>
+</div>
+
+<div class="flex justify-between gap-4">
+  <span class="font-bold text-slate-700">Hadimba Devi Temple</span>
+  <span class="text-lootOrange font-extrabold">Approx. 17 km</span>
+</div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- FOOTER -->
+<!-- ========================================= -->
+
+<footer id="contact" class="relative bg-lootBlue text-white overflow-hidden">
+
+  <!-- BACKGROUND BLUR -->
+  <div class="absolute top-0 right-0 w-96 h-96 bg-lootOrange/20 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 py-16">
+
+    <!-- FOOTER GRID -->
+    <div class="grid lg:grid-cols-4 gap-10">
+
+      <!-- ========================================= -->
+      <!-- BRAND SECTION -->
+      <!-- ========================================= -->
+      <div class="lg:col-span-1">
+
+        <!-- LOGO -->
+        <a href="index.html" class="inline-flex bg-white rounded-2xl p-3 mb-6">
+          <img 
+            src="assets/images/logo.jpeg" 
+            alt="LootMart Manali Logo"
+            class="h-16 w-auto object-contain"
+          >
+        </a>
+
+        <!-- DESCRIPTION -->
+        <p class="text-blue-100 leading-relaxed">
+          LootMart Manali — your local destination for home essentials, kids products, gifting and tourist shopping.
+        </p>
+
+        <!-- ========================================= -->
+        <!-- SOCIAL MEDIA ICONS -->
+        <!-- ========================================= -->
+        <div class="flex items-center gap-4 mt-8">
+
+          <!-- FACEBOOK -->
+          <a 
+            href="https://www.facebook.com/people/Loot-Mart-Manali/61589671065521/?sk=reels_tab"
+            target="_blank"
+            class="w-12 h-12 rounded-2xl bg-white/10 hover:bg-lootOrange transition flex items-center justify-center"
+          >
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-white"
+              fill="currentColor"
+              viewBox="0 0 24 24">
+
+              <path d="M22 12.07C22 6.477 17.523 2 12 2S2 6.477 2 12.07c0 5.017 3.657 9.18 8.438 9.93v-7.03H7.898v-2.9h2.54V9.845c0-2.52 1.492-3.913 3.777-3.913 1.094 0 2.238.196 2.238.196v2.474h-1.26c-1.243 0-1.63.774-1.63 1.567v1.882h2.773l-.443 2.9h-2.33V22c4.78-.75 8.437-4.913 8.437-9.93z"/>
+            </svg>
+
+          </a>
+
+          <!-- INSTAGRAM -->
+          <a 
+            href="https://www.instagram.com/lootmartmanali/reels/"
+            target="_blank"
+            class="w-12 h-12 rounded-2xl bg-white/10 hover:bg-lootOrange transition flex items-center justify-center"
+          >
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-white"
+              fill="currentColor"
+              viewBox="0 0 24 24">
+
+              <path d="M7.75 2C4.574 2 2 4.574 2 7.75v8.5C2 19.426 4.574 22 7.75 22h8.5C19.426 22 22 19.426 22 16.25v-8.5C22 4.574 19.426 2 16.25 2h-8.5zm0 1.8h8.5c2.183 0 3.95 1.767 3.95 3.95v8.5c0 2.183-1.767 3.95-3.95 3.95h-8.5c-2.183 0-3.95-1.767-3.95-3.95v-8.5c0-2.183 1.767-3.95 3.95-3.95zm8.85 1.35a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 1.8A3.2 3.2 0 1112 15.2 3.2 3.2 0 0112 8.8z"/>
+            </svg>
+
+          </a>
+
+          <!-- YOUTUBE -->
+          <a 
+            href="#"
+            class="w-12 h-12 rounded-2xl bg-white/10 hover:bg-lootOrange transition flex items-center justify-center"
+          >
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-white"
+              fill="currentColor"
+              viewBox="0 0 24 24">
+
+              <path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31.4 31.4 0 000 12a31.4 31.4 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31.4 31.4 0 0024 12a31.4 31.4 0 00-.5-5.8zM9.6 15.5v-7L15.8 12l-6.2 3.5z"/>
+            </svg>
+
+          </a>
+
+          <!-- TWITTER -->
+          <a 
+            href="#"
+            class="w-12 h-12 rounded-2xl bg-white/10 hover:bg-lootOrange transition flex items-center justify-center"
+          >
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-white"
+              fill="currentColor"
+              viewBox="0 0 24 24">
+
+              <path d="M18.244 2H21l-6.56 7.497L22 22h-6.828l-5.347-6.99L3.6 22H1l7.018-8.018L2 2h6.828l4.84 6.33L18.244 2zm-1.197 18h1.89L7.05 3.902H5.022L17.047 20z"/>
+            </svg>
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- ========================================= -->
+      <!-- SHOP CATEGORIES -->
+      <!-- ========================================= -->
+      <div>
+
+        <h4 class="text-xl font-extrabold mb-5">
+          Shop Categories
+        </h4>
+
+        <div class="grid gap-3 text-blue-100">
+
+          <a href="bags.html" class="hover:text-lootOrange">
+            Bags
+          </a>
+
+          <a href="boots.html" class="hover:text-lootOrange">
+            Boots
+          </a>
+
+          <a href="bottles.html" class="hover:text-lootOrange">
+            Bottle, Tumblers, Mugs
+          </a>
+
+          <a href="#" class="hover:text-lootOrange">
+            Diaries
+          </a>
+
+          <a href="#" class="hover:text-lootOrange">
+            Glasses
+          </a>
+
+          <a href="toys.html" class="hover:text-lootOrange">
+            Toys
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- ========================================= -->
+      <!-- STORE SECTIONS -->
+      <!-- ========================================= -->
+      <div>
+
+        <h4 class="text-xl font-extrabold mb-5">
+          Store Sections
+        </h4>
+
+        <div class="grid gap-3 text-blue-100">
+
+          <a href="index.html#categories" class="hover:text-lootOrange">
+            Home Furnishings
+          </a>
+
+          <a href="toys.html" class="hover:text-lootOrange">
+            Kids Collection
+          </a>
+
+          <a href="index.html#top-selling" class="hover:text-lootOrange">
+            Top Selling Products
+          </a>
+
+          <a href="contact.html" class="hover:text-lootOrange">
+            Contact Us
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- ========================================= -->
+      <!-- CONTACT INFO -->
+      <!-- ========================================= -->
+      <div>
+
+        <h4 class="text-xl font-extrabold mb-5">
+          Contact Store
+        </h4>
+
+        <div class="space-y-5 text-blue-100">
+
+          <!-- ADDRESS -->
+          <p>
+            <span class="text-white font-bold block mb-1">
+              Store Address:
+            </span>
+
+            Near Patlikhul Police Station <br>
+            Distt. Kullu, Himachal Pradesh <br>
+            175129
+          </p>
+
+          <!-- PHONE -->
+          <p>
+            <span class="text-white font-bold block mb-1">
+              Call / WhatsApp:
+            </span>
+
+            <a 
+              href="tel:+917831802555"
+              class="hover:text-lootOrange transition"
+            >
+              +91 78318 02555
+            </a>
+          </p>
+
+          <!-- EMAIL -->
+          <p>
+            <span class="text-white font-bold block mb-1">
+              Email Address:
+            </span>
+
+            <a 
+              href="mailto:Jagpal.gusain@yahoo.com"
+              class="hover:text-lootOrange transition break-all"
+            >
+              Jagpal.gusain@yahoo.com
+            </a>
+          </p>
+
+        </div>
+
+        <!-- CONTACT BUTTON -->
+        <a 
+          href="contact.html"
+          class="inline-block mt-7 bg-lootOrange text-white px-7 py-4 rounded-2xl font-extrabold hover:scale-105 transition"
+        >
+          Send Inquiry
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- FOOTER BOTTOM BAR -->
+    <!-- ========================================= -->
+    <div class="mt-14 pt-6 border-t border-white/20 flex flex-col md:flex-row justify-between gap-4 text-blue-100 text-sm">
+
+      <p>
+        © 2026 LootMart Manali. All Rights Reserved.
+      </p>
+
+      <!-- BOTTOM LINKS -->
+      <div class="flex gap-5">
+
+        <a href="privacy-policy.html" class="hover:text-lootOrange">
+          Privacy Policy
+        </a>
+        <a href="terms.html" class="hover:text-lootOrange">
+          Terms & Conditions
+        </a>
+
+        <a href="contact.html" class="hover:text-lootOrange">
+          Support
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+  <!-- Message Modal -->
+  <div id="messageModal" class="hidden fixed inset-0 bg-black/50 z-[100] p-4 flex items-center justify-center">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl">
+      <div class="flex justify-between items-center border-b pb-4">
+        <h3 class="text-xl font-extrabold text-lootBlue">Page Coming Soon</h3>
+        <button id="closeModal" class="text-3xl text-lootOrange leading-none">&times;</button>
+      </div>
+      <p id="modalText" class="text-slate-600 mt-5 leading-relaxed"></p>
+      <button id="modalOkBtn" class="mt-6 w-full bg-lootOrange text-white py-3 rounded-xl font-extrabold">
+        Okay
+      </button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

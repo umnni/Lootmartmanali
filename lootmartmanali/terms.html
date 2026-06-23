@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms & Conditions | LootMart Manali</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            lootBlue: "#0461b7",
+            lootOrange: "#fe760a"
+          },
+          boxShadow: {
+            soft: "0 12px 35px rgba(4, 97, 183, 0.13)",
+            card: "0 8px 24px rgba(0, 0, 0, 0.08)"
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+<!-- Top Bar -->
+<div class="bg-lootBlue text-white text-sm">
+  <div class="max-w-7xl mx-auto px-4 py-2 flex flex-col md:flex-row justify-between gap-2">
+    <p>Manali Store | Home Furnishing, Kids, Gifting & Tourist Essentials</p>
+    <p>Call / WhatsApp: +91 XXXXX XXXXX</p>
+  </div>
+</div>
+
+  <!-- Header -->
+<header class="sticky top-0 z-50 bg-white border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center gap-4">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center shrink-0">
+      <img 
+        src="assets/images/logo.jpeg" 
+        alt="LootMart Manali Logo"
+        class="h-14 w-auto object-contain"
+      >
+    </a>
+
+    <!-- Search Bar -->
+    <div class="hidden md:flex flex-1 max-w-xl">
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Search for bags, toys, hoodies, bottles, watches..."
+        class="w-full px-5 py-3 border-2 border-lootBlue rounded-l-xl outline-none"
+      />
+      <button class="px-7 py-3 bg-lootOrange text-white rounded-r-xl font-bold">
+        Search
+      </button>
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden lg:flex items-center gap-6 font-semibold whitespace-nowrap">
+
+      <!-- Categories Dropdown -->
+      <div class="relative group">
+        <button class="hover:text-lootOrange flex items-center gap-1">
+          Categories
+          <span class="text-xs">▼</span>
+        </button>
+
+        <div class="absolute left-0 top-full pt-4 hidden group-hover:block">
+          <div class="w-72 bg-white rounded-2xl shadow-soft border border-slate-200 p-3">
+
+            <a href="bags.html" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Bags
+            </a>
+
+            <a href="boots.html" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Boots
+            </a>
+
+            <a href="bottles.html" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Bottle, Tumblers, Mugs
+            </a>
+
+            <a href="diaries.html" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Diaries
+            </a>
+
+            <a href="glasses.html" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Glasses
+            </a>
+
+            <a href="mats-rugs-towels.html" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Mats, Rugs, Towels
+            </a>
+
+            <a href="tool-kits.html" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Tool Kits
+            </a>
+
+            <a href="toys.html" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Toys
+            </a>
+
+            <a href="hoodies.html" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Warm Hoodies
+            </a>
+
+            <a href="watches.html" class="block px-4 py-3 rounded-xl hover:bg-blue-50 hover:text-lootOrange">
+              Watches
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <a href="about.html" class="hover:text-lootOrange">About Us</a>
+      <a href="index.html#top-selling" class="hover:text-lootOrange">Top Selling</a>
+      <a href="contact.html" class="hover:text-lootOrange">Contact</a>
+
+    </nav>
+
+    <!-- Login + Cart -->
+    <div class="hidden lg:flex items-center gap-3 ml-auto">
+      <a 
+        href="login.html"
+        class="border-2 border-lootBlue text-lootBlue px-5 py-3 rounded-xl font-bold hover:bg-lootBlue hover:text-white transition"
+      >
+        Login
+      </a>
+
+      <a 
+        href="cart.html"
+        class="relative bg-lootOrange text-white px-5 py-3 rounded-xl font-bold hover:opacity-90 transition"
+      >
+        Cart
+        <span id="cartCount" class="absolute -top-2 -right-2 bg-lootBlue text-white text-xs w-6 h-6 rounded-full flex items-center justify-center">
+          0
+        </span>
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="menuBtn" class="lg:hidden ml-auto text-lootBlue text-3xl font-bold">☰</button>
+
+  </div>
+
+  <!-- Mobile Search -->
+  <div class="md:hidden px-4 pb-4 flex">
+    <input
+      id="mobileSearchInput"
+      type="text"
+      placeholder="Search products..."
+      class="w-full px-4 py-3 border-2 border-lootBlue rounded-l-xl outline-none"
+    />
+    <button class="px-5 py-3 bg-lootOrange text-white rounded-r-xl font-bold">Go</button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden lg:hidden px-4 pb-4">
+    <div class="grid gap-2 font-semibold">
+
+      <details class="bg-slate-50 rounded-xl p-3">
+        <summary class="cursor-pointer text-lootBlue font-extrabold">
+          Categories
+        </summary>
+
+        <div class="grid gap-2 mt-3 pl-2">
+          <a href="bags.html" class="hover:text-lootOrange">Bags</a>
+          <a href="boots.html" class="hover:text-lootOrange">Boots</a>
+          <a href="bottles.html" class="hover:text-lootOrange">Bottle, Tumblers, Mugs</a>
+          <a href="diaries.html" class="hover:text-lootOrange">Diaries</a>
+          <a href="glasses.html" class="hover:text-lootOrange">Glasses</a>
+          <a href="mats-rugs-towels.html" class="hover:text-lootOrange">Mats, Rugs, Towels</a>
+          <a href="tool-kits.html" class="hover:text-lootOrange">Tool Kits</a>
+          <a href="toys.html" class="hover:text-lootOrange">Toys</a>
+          <a href="hoodies.html" class="hover:text-lootOrange">Warm Hoodies</a>
+          <a href="watches.html" class="hover:text-lootOrange">Watches</a>
+        </div>
+      </details>
+
+      <a href="about.html" class="bg-slate-50 rounded-xl p-3">About Us</a>
+      <a href="index.html#top-selling" class="bg-slate-50 rounded-xl p-3">Top Selling</a>
+      <a href="contact.html" class="bg-slate-50 rounded-xl p-3">Contact</a>
+      <a href="login.html" class="bg-slate-50 rounded-xl p-3">Login</a>
+      <a href="cart.html" class="bg-lootOrange text-white rounded-xl p-3">Cart</a>
+
+    </div>
+  </div>
+</header>
+
+<!-- Page Hero -->
+<section class="relative overflow-hidden">
+
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+
+    <img 
+      src="assets/images/term.jpg"
+      alt="Terms Background"
+      class="w-full h-full object-cover"
+    >
+
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <!-- Blue Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-lootBlue/90 via-lootBlue/75 to-black/50"></div>
+
+  </div>
+  <div class="absolute top-0 right-0 w-96 h-96 bg-lootOrange/20 rounded-full blur-3xl"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 py-24">
+    <div class="max-w-4xl">
+      <p class="text-lootOrange font-extrabold uppercase tracking-[0.3em] text-sm">
+        Legal Information
+      </p>
+
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white mt-4 leading-tight">
+        Terms & Conditions
+      </h1>
+
+      <p class="text-blue-100 text-lg mt-6 leading-relaxed">
+        These Terms & Conditions explain the rules, responsibilities and policies that apply when you use the LootMart Manali website, browse our products, place an order, visit our store, or interact with our services.
+      </p>
+
+      <p class="text-white/80 mt-5 font-semibold">
+        Last Updated: January 2026
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Terms Content -->
+<section class="max-w-5xl mx-auto px-4 py-16">
+
+  <div class="bg-white rounded-[36px] shadow-soft border border-blue-100 p-7 md:p-12">
+
+    <div class="prose max-w-none">
+
+      <div class="mb-12">
+        <h2 class="text-3xl font-extrabold text-lootBlue mb-5">1. Introduction</h2>
+        <p class="text-slate-600 leading-8 text-lg">
+          Welcome to LootMart Manali. By accessing our website, browsing product pages, making a purchase, requesting store support, or using any service offered by LootMart Manali, you agree to follow these Terms & Conditions. These terms are designed to clearly explain how our website and store services operate, how orders are handled, and what responsibilities apply to customers and to LootMart Manali.
+        </p>
+        <p class="text-slate-600 leading-8 text-lg mt-5">
+          If you do not agree with any part of these Terms & Conditions, you should not use this website or place an order through it. Your continued use of the website will be considered acceptance of these terms.
+        </p>
+      </div>
+
+      <div class="mb-12">
+        <h2 class="text-3xl font-extrabold text-lootBlue mb-5">2. About LootMart Manali</h2>
+        <p class="text-slate-600 leading-8 text-lg">
+          LootMart Manali is a retail store offering products such as toys, kids ride-on cars, bags, boots, bottles, mugs, diaries, glasses, mats, rugs, towels, tool kits, hoodies, watches, gifting products, home furnishing items and tourist essentials. The website is created to help customers explore products, understand available categories, contact the store, and make shopping more convenient.
+        </p>
+        <p class="text-slate-600 leading-8 text-lg mt-5">
+          Product availability, store offers, pricing and services may vary from time to time depending on stock, supplier updates, seasonal demand and store decisions.
+        </p>
+      </div>
+
+      <div class="mb-12">
+        <h2 class="text-3xl font-extrabold text-lootBlue mb-5">3. Use of Website</h2>
+        <p class="text-slate-600 leading-8 text-lg">
+          The LootMart Manali website is intended for genuine customers who want to browse products, learn about our store, contact us, or purchase available items. You agree to use this website only for lawful purposes and in a manner that does not damage, disable, misuse or interfere with the website’s working.
+        </p>
+        <p class="text-slate-600 leading-8 text-lg mt-5">
+          You must not attempt to copy website content, misuse product images, create fake orders, submit false information, interfere with website security, upload harmful code, or use the website in a way that may harm LootMart Manali, other customers, or third-party service providers.
+        </p>
+      </div>
+
+      <div class="mb-12">
+        <h2 class="text-3xl font-extrabold text-lootBlue mb-5">4. Product Information</h2>
+        <p class="text-slate-600 leading-8 text-lg">
+          We try our best to keep product names, descriptions, images, prices, sizes, features and availability as accurate as possible. However, actual product appearance may slightly differ from the images shown on the website due to lighting, photography, screen display settings, supplier changes, packaging updates or manufacturing differences.
+        </p>
+        <p class="text-slate-600 leading-8 text-lg mt-5">
+          Product details such as color, design, battery specification, material, dimensions, accessories, warranty and features should be confirmed before final purchase, especially for products such as ride-on toy cars, electronics, travel products, boots and home furnishing items.
+        </p>
+      </div>
+
+      <div class="mb-12">
+        <h2 class="text-3xl font-extrabold text-lootBlue mb-5">5. Pricing, Offers & Availability</h2>
+        <p class="text-slate-600 leading-8 text-lg">
+          Product prices displayed on the website may change without prior notice. Special offers, discounts, store prices and promotional pricing may be available for a limited time and may depend on stock availability. LootMart Manali reserves the right to update prices, remove offers, correct pricing mistakes, or discontinue any product at any time.
+        </p>
+        <p class="text-slate-600 leading-8 text-lg mt-5">
+          In case a product is listed with an incorrect price due to a technical, typographical or system error, LootMart Manali may cancel or modify the order before confirmation. Placing an order does not automatically guarantee that the product is available or that the price is final until confirmed by the store.
+        </p>
+      </div>
+
+      <div class="mb-12">
+        <h2 class="text-3xl font-extrabold text-lootBlue mb-5">6. Orders & Confirmation</h2>
+        <p class="text-slate-600 leading-8 text-lg">
+          When you place an order or submit an inquiry, you agree to provide correct and complete information including your name, contact number, address and product requirements. Orders may be confirmed only after product availability, payment status and customer details are verified.
+        </p>
+        <p class="text-slate-600 leading-8 text-lg mt-5">
+          LootMart Manali reserves the right to refuse, cancel or hold any order if the product is out of stock, payment is incomplete, customer details are incorrect, unusual activity is detected, or the order cannot be fulfilled due to operational reasons.
+        </p>
+      </div>
+
+      <div class="mb-12">
+        <h2 class="text-3xl font-extrabold text-lootBlue mb-5">7. Payments</h2>
+        <p class="text-slate-600 leading-8 text-lg">
+          Customers are responsible for ensuring that payment details are accurate and that payment is completed through the available payment method. If a payment fails, remains pending, or is not verified, the order may not be processed.
+        </p>
+        <p class="text-slate-600 leading-8 text-lg mt-5">
+          LootMart Manali is not responsible for delays caused by bank errors, payment gateway issues, incorrect customer details, network failures, or third-party payment service interruptions.
+        </p>
+      </div>
+
+      <div class="mb-12">
+        <h2 class="text-3xl font-extrabold text-lootBlue mb-5">8. Shipping, Delivery & Store Pickup</h2>
+        <p class="text-slate-600 leading-8 text-lg">
+          Delivery or store pickup options may vary depending on product type, customer location, stock availability and store operations. Estimated delivery timelines are only approximate and may be affected by weather, road conditions, local restrictions, holidays, courier delays or other circumstances beyond our control.
+        </p>
+        <p class="text-slate-600 leading-8 text-lg mt-5">
+          Large or delicate products, including some toy cars, furnishing items or bulky products, may require special handling or may be available only for store pickup. Customers should confirm final delivery or pickup details before completing the purchase.
+        </p>
+      </div>
+
+      <div class="mb-12">
+        <h2 class="text-3xl font-extrabold text-lootBlue mb-5">9. Returns, Exchanges & Refunds</h2>
+        <p class="text-slate-600 leading-8 text-lg">
+          Returns, exchanges and refunds are subject to the product category, product condition, purchase proof and applicable store policy. A product may be eligible for return or exchange only if it is unused, undamaged, complete with original packaging, and reported within the applicable return period.
+        </p>
+        <p class="text-slate-600 leading-8 text-lg mt-5">
+          Products that are damaged due to misuse, rough handling, water damage, improper charging, installation mistakes, accidental breakage, missing parts, or customer negligence may not be eligible for return, exchange or refund. Certain products such as clearance items, used items, customized products, hygiene-sensitive items or products sold under special offers may not be returnable.
+        </p>
+        <p class="text-slate-600 leading-8 text-lg mt-5">
+          Refunds, if approved, will be processed according to the store’s applicable refund process and may take time depending on the original payment method and banking procedures.
+        </p>
+      </div>
+
+      <div class="mb-12">
+        <h2 class="text-3xl font-extrabold text-lootBlue mb-5">10. Warranty & Service Support</h2>
+        <p class="text-slate-600 leading-8 text-lg">
+          Warranty coverage depends on the specific product, brand, manufacturer or supplier policy. Some products may include warranty support, while others may not. Customers should confirm warranty period, covered parts, service process and exclusions before purchase.
+        </p>
+        <p class="text-slate-600 leading-8 text-lg mt-5">
+          Warranty may not cover physical damage, misuse, water damage, unauthorized repair, battery damage caused by incorrect charging, normal wear and tear, or damage caused after purchase due to improper handling. LootMart Manali will provide support as per applicable store or manufacturer policy.
+        </p>
+      </div>
+
+      <div class="mb-12">
+        <h2 class="text-3xl font-extrabold text-lootBlue mb-5">11. Customer Responsibility</h2>
+        <p class="text-slate-600 leading-8 text-lg">
+          Customers are responsible for checking product details before purchase and using products safely according to their intended purpose. For children’s products, toys and ride-on cars, adult supervision is strongly recommended. Customers should carefully follow charging instructions, safety guidelines and usage instructions wherever applicable.
+        </p>
+        <p class="text-slate-600 leading-8 text-lg mt-5">
+          LootMart Manali will not be responsible for damage, injury, loss or malfunction caused by misuse, careless handling, ignoring safety instructions or using the product in unsuitable conditions.
+        </p>
+      </div>
+
+      <div class="mb-12">
+        <h2 class="text-3xl font-extrabold text-lootBlue mb-5">12. Intellectual Property</h2>
+        <p class="text-slate-600 leading-8 text-lg">
+          All website content including the LootMart Manali name, logo, images, product presentation, graphics, layout, text, banners, design elements and branding belong to LootMart Manali or their respective owners. Users may not copy, reproduce, modify, distribute or use this content for commercial purposes without written permission.
+        </p>
+      </div>
+
+      <div class="mb-12">
+        <h2 class="text-3xl font-extrabold text-lootBlue mb-5">13. Limitation of Liability</h2>
+        <p class="text-slate-600 leading-8 text-lg">
+          LootMart Manali will not be liable for indirect, incidental, special or consequential damages arising from website use, product misuse, delayed delivery, unavailable stock, technical issues, third-party service failures, payment delays or events beyond reasonable control.
+        </p>
+        <p class="text-slate-600 leading-8 text-lg mt-5">
+          While we aim to keep the website active and accurate, we do not guarantee that the website will always be error-free, uninterrupted or fully updated at all times.
+        </p>
+      </div>
+
+      <div class="mb-12">
+        <h2 class="text-3xl font-extrabold text-lootBlue mb-5">14. Changes to Terms & Conditions</h2>
+        <p class="text-slate-600 leading-8 text-lg">
+          LootMart Manali may update, modify or replace these Terms & Conditions at any time without prior notice. Updated terms will be posted on this page. Continued use of the website after updates means that you accept the revised terms.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-3xl font-extrabold text-lootBlue mb-5">15. Contact Us</h2>
+        <p class="text-slate-600 leading-8 text-lg">
+          For any questions about these Terms & Conditions, product policies, returns, warranty or store support, customers may contact LootMart Manali using the contact details provided on the website.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- FOOTER -->
+<!-- ========================================= -->
+
+<footer id="contact" class="relative bg-lootBlue text-white overflow-hidden">
+
+  <!-- BACKGROUND BLUR -->
+  <div class="absolute top-0 right-0 w-96 h-96 bg-lootOrange/20 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 py-16">
+
+    <!-- FOOTER GRID -->
+    <div class="grid lg:grid-cols-4 gap-10">
+
+      <!-- ========================================= -->
+      <!-- BRAND SECTION -->
+      <!-- ========================================= -->
+      <div class="lg:col-span-1">
+
+        <!-- LOGO -->
+        <a href="index.html" class="inline-flex bg-white rounded-2xl p-3 mb-6">
+          <img 
+            src="assets/images/logo.jpeg" 
+            alt="LootMart Manali Logo"
+            class="h-16 w-auto object-contain"
+          >
+        </a>
+
+        <!-- DESCRIPTION -->
+        <p class="text-blue-100 leading-relaxed">
+          LootMart Manali — your local destination for home essentials, kids products, gifting and tourist shopping.
+        </p>
+
+        <!-- ========================================= -->
+        <!-- SOCIAL MEDIA ICONS -->
+        <!-- ========================================= -->
+        <div class="flex items-center gap-4 mt-8">
+
+          <!-- FACEBOOK -->
+          <a 
+            href="https://www.facebook.com/people/Loot-Mart-Manali/61589671065521/?sk=reels_tab"
+            target="_blank"
+            class="w-12 h-12 rounded-2xl bg-white/10 hover:bg-lootOrange transition flex items-center justify-center"
+          >
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-white"
+              fill="currentColor"
+              viewBox="0 0 24 24">
+
+              <path d="M22 12.07C22 6.477 17.523 2 12 2S2 6.477 2 12.07c0 5.017 3.657 9.18 8.438 9.93v-7.03H7.898v-2.9h2.54V9.845c0-2.52 1.492-3.913 3.777-3.913 1.094 0 2.238.196 2.238.196v2.474h-1.26c-1.243 0-1.63.774-1.63 1.567v1.882h2.773l-.443 2.9h-2.33V22c4.78-.75 8.437-4.913 8.437-9.93z"/>
+            </svg>
+
+          </a>
+
+          <!-- INSTAGRAM -->
+          <a 
+            href="https://www.instagram.com/lootmartmanali/reels/"
+            target="_blank"
+            class="w-12 h-12 rounded-2xl bg-white/10 hover:bg-lootOrange transition flex items-center justify-center"
+          >
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-white"
+              fill="currentColor"
+              viewBox="0 0 24 24">
+
+              <path d="M7.75 2C4.574 2 2 4.574 2 7.75v8.5C2 19.426 4.574 22 7.75 22h8.5C19.426 22 22 19.426 22 16.25v-8.5C22 4.574 19.426 2 16.25 2h-8.5zm0 1.8h8.5c2.183 0 3.95 1.767 3.95 3.95v8.5c0 2.183-1.767 3.95-3.95 3.95h-8.5c-2.183 0-3.95-1.767-3.95-3.95v-8.5c0-2.183 1.767-3.95 3.95-3.95zm8.85 1.35a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 1.8A3.2 3.2 0 1112 15.2 3.2 3.2 0 0112 8.8z"/>
+            </svg>
+
+          </a>
+
+          <!-- YOUTUBE -->
+          <a 
+            href="#"
+            class="w-12 h-12 rounded-2xl bg-white/10 hover:bg-lootOrange transition flex items-center justify-center"
+          >
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-white"
+              fill="currentColor"
+              viewBox="0 0 24 24">
+
+              <path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 00.5 6.2 31.4 31.4 0 000 12a31.4 31.4 0 00.5 5.8 3 3 0 002.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 002.1-2.1A31.4 31.4 0 0024 12a31.4 31.4 0 00-.5-5.8zM9.6 15.5v-7L15.8 12l-6.2 3.5z"/>
+            </svg>
+
+          </a>
+
+          <!-- TWITTER -->
+          <a 
+            href="#"
+            class="w-12 h-12 rounded-2xl bg-white/10 hover:bg-lootOrange transition flex items-center justify-center"
+          >
+
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 text-white"
+              fill="currentColor"
+              viewBox="0 0 24 24">
+
+              <path d="M18.244 2H21l-6.56 7.497L22 22h-6.828l-5.347-6.99L3.6 22H1l7.018-8.018L2 2h6.828l4.84 6.33L18.244 2zm-1.197 18h1.89L7.05 3.902H5.022L17.047 20z"/>
+            </svg>
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- ========================================= -->
+      <!-- SHOP CATEGORIES -->
+      <!-- ========================================= -->
+      <div>
+
+        <h4 class="text-xl font-extrabold mb-5">
+          Shop Categories
+        </h4>
+
+        <div class="grid gap-3 text-blue-100">
+
+          <a href="bags.html" class="hover:text-lootOrange">
+            Bags
+          </a>
+
+          <a href="boots.html" class="hover:text-lootOrange">
+            Boots
+          </a>
+
+          <a href="bottles.html" class="hover:text-lootOrange">
+            Bottle, Tumblers, Mugs
+          </a>
+
+          <a href="diaries.html" class="hover:text-lootOrange">
+            Diaries
+          </a>
+
+          <a href="glasses.html" class="hover:text-lootOrange">
+            Glasses
+          </a>
+
+          <a href="toys.html" class="hover:text-lootOrange">
+            Toys
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- ========================================= -->
+      <!-- STORE SECTIONS -->
+      <!-- ========================================= -->
+      <div>
+
+        <h4 class="text-xl font-extrabold mb-5">
+          Store Sections
+        </h4>
+
+        <div class="grid gap-3 text-blue-100">
+
+          <a href="index.html#categories" class="hover:text-lootOrange">
+            Home Furnishings
+          </a>
+
+          <a href="toys.html" class="hover:text-lootOrange">
+            Kids Collection
+          </a>
+
+          <a href="index.html#top-selling" class="hover:text-lootOrange">
+            Top Selling Products
+          </a>
+
+          <a href="contact.html" class="hover:text-lootOrange">
+            Contact Us
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- ========================================= -->
+      <!-- CONTACT INFO -->
+      <!-- ========================================= -->
+      <div>
+
+        <h4 class="text-xl font-extrabold mb-5">
+          Contact Store
+        </h4>
+
+        <div class="space-y-5 text-blue-100">
+
+          <!-- ADDRESS -->
+          <p>
+            <span class="text-white font-bold block mb-1">
+              Store Address:
+            </span>
+
+            Near Patlikhul Police Station <br>
+            Distt. Kullu, Himachal Pradesh <br>
+            175129
+          </p>
+
+          <!-- PHONE -->
+          <p>
+            <span class="text-white font-bold block mb-1">
+              Call / WhatsApp:
+            </span>
+
+            <a 
+              href="tel:+917831802555"
+              class="hover:text-lootOrange transition"
+            >
+              +91 78318 02555
+            </a>
+          </p>
+
+          <!-- EMAIL -->
+          <p>
+            <span class="text-white font-bold block mb-1">
+              Email Address:
+            </span>
+
+            <a 
+              href="mailto:Jagpal.gusain@yahoo.com"
+              class="hover:text-lootOrange transition break-all"
+            >
+              Jagpal.gusain@yahoo.com
+            </a>
+          </p>
+
+        </div>
+
+        <!-- CONTACT BUTTON -->
+        <a 
+          href="contact.html"
+          class="inline-block mt-7 bg-lootOrange text-white px-7 py-4 rounded-2xl font-extrabold hover:scale-105 transition"
+        >
+          Send Inquiry
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- FOOTER BOTTOM BAR -->
+    <!-- ========================================= -->
+    <div class="mt-14 pt-6 border-t border-white/20 flex flex-col md:flex-row justify-between gap-4 text-blue-100 text-sm">
+
+      <p>
+        © 2026 LootMart Manali. All Rights Reserved.
+      </p>
+
+      <!-- BOTTOM LINKS -->
+      <div class="flex gap-5">
+
+        <a href="privacy-policy.html" class="hover:text-lootOrange">
+          Privacy Policy
+        </a>
+
+        <a href="terms.html" class="hover:text-lootOrange">
+          Terms & Conditions
+        </a>
+
+        <a href="contact.html" class="hover:text-lootOrange">
+          Support
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  }
+</script>
+
+</body>
+</html>
